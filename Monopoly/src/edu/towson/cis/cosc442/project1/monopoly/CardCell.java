@@ -7,7 +7,7 @@ public class CardCell extends Cell {
         this.type = type;
     }
     
-    public void playAction() {
+    public Boolean playAction(String msg) {
     }
     
     public int getType() {
