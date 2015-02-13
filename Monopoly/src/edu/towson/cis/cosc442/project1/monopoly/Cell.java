@@ -1,8 +1,18 @@
 package edu.towson.cis.cosc442.project1.monopoly;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Cell.
+ */
 public abstract class Cell implements IOwnable {
+	
+	/** The name. */
 	private String name;
+	
+	/** The owner. */
 	protected Player owner;
+	
+	/** The available. */
 	private boolean available = true;
 
 	/* (non-Javadoc)
@@ -21,6 +31,11 @@ public abstract class Cell implements IOwnable {
 		return owner;
 	}
 	
+	/**
+	 * Gets the price.
+	 *
+	 * @return the price
+	 */
 	public int getPrice() {
 		return 0;
 	}
@@ -29,8 +44,13 @@ public abstract class Cell implements IOwnable {
 	 * @see edu.towson.cis.cosc442.project1.monopoly.IOwnable#playAction()
 	 */
 	@Override
-	public abstract Boolean playAction(String msg);
+	public abstract void playAction();
 
+	/**
+	 * Sets the name.
+	 *
+	 * @param name the new name
+	 */
 	void setName(String name) {
 		this.name = name;
 	}
