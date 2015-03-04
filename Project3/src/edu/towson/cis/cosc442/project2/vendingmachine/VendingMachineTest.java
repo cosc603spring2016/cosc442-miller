@@ -27,7 +27,7 @@ public class VendingMachineTest {
 	 */
 	@Test
 	public void testGetSlotIndexA() throws VendingMachineException {
-		assertEquals(null, machine.getItem(machine.A_CODE));
+		assertEquals(null, machine.getItem(VendingMachine.A_CODE));
 	}
 	
 	/**
@@ -35,7 +35,7 @@ public class VendingMachineTest {
 	 */
 	@Test
 	public void testGetSlotIndexB() throws VendingMachineException {
-		assertEquals(null, machine.getItem(machine.B_CODE));
+		assertEquals(null, machine.getItem(VendingMachine.B_CODE));
 	}
 	
 	/**
@@ -43,7 +43,7 @@ public class VendingMachineTest {
 	 */
 	@Test
 	public void testGetSlotIndexC() throws VendingMachineException {
-		assertEquals(null, machine.getItem(machine.C_CODE));
+		assertEquals(null, machine.getItem(VendingMachine.C_CODE));
 	}
 	
 	/**
@@ -51,7 +51,7 @@ public class VendingMachineTest {
 	 */
 	@Test
 	public void testGetSlotIndexD() throws VendingMachineException {
-		assertEquals(null, machine.getItem(machine.D_CODE));
+		assertEquals(null, machine.getItem(VendingMachine.D_CODE));
 	}
 	
 	/**
@@ -60,10 +60,10 @@ public class VendingMachineTest {
 	 */
 	@Test
 	public void testAddItemToEmptySlot() throws VendingMachineException{
-		machine.addItem(item1, machine.A_CODE);
-		machine.addItem(item2, machine.B_CODE);
-		assertEquals(item1, machine.getItem(machine.A_CODE));
-		assertEquals(item2, machine.getItem(machine.B_CODE));		
+		machine.addItem(item1, VendingMachine.A_CODE);
+		machine.addItem(item2, VendingMachine.B_CODE);
+		assertEquals(item1, machine.getItem(VendingMachine.A_CODE));
+		assertEquals(item2, machine.getItem(VendingMachine.B_CODE));		
 	}
 	
 	/**
@@ -72,8 +72,8 @@ public class VendingMachineTest {
 	 */
 	@Test(expected = VendingMachineException.class)
 	public void testAddItemToFullSlot() throws VendingMachineException{
-		machine.addItem(item1, machine.A_CODE);
-		machine.addItem(item2, machine.A_CODE);
+		machine.addItem(item1, VendingMachine.A_CODE);
+		machine.addItem(item2, VendingMachine.A_CODE);
 	}
 	
 	/**
@@ -91,8 +91,8 @@ public class VendingMachineTest {
 	 */
 	@Test
 	public void testRemovedItemCorrect() throws VendingMachineException{
-		machine.addItem(item1, machine.A_CODE);
-		VendingMachineItem removedItem = machine.removeItem(machine.A_CODE);
+		machine.addItem(item1, VendingMachine.A_CODE);
+		VendingMachineItem removedItem = machine.removeItem(VendingMachine.A_CODE);
 		assertEquals(item1, removedItem);
 	}
 	
@@ -102,9 +102,9 @@ public class VendingMachineTest {
 	 */
 	@Test
 	public void testRemovingItemEmptiesSlot() throws VendingMachineException{
-		machine.addItem(item1, machine.A_CODE);
-		machine.removeItem(machine.A_CODE);
-		assertEquals(null, machine.getItem(machine.A_CODE));
+		machine.addItem(item1, VendingMachine.A_CODE);
+		machine.removeItem(VendingMachine.A_CODE);
+		assertEquals(null, machine.getItem(VendingMachine.A_CODE));
 	}
 	
 	/**
@@ -113,7 +113,7 @@ public class VendingMachineTest {
 	 */
 	@Test(expected = VendingMachineException.class)
 	public void testRemovingEmptyErrors() throws VendingMachineException{
-		machine.removeItem(machine.A_CODE);
+		machine.removeItem(VendingMachine.A_CODE);
 	}
 	
 	/**
@@ -161,10 +161,10 @@ public class VendingMachineTest {
 	 */
 	@Test
 	public void testMakePurchaseRemovesItem() throws VendingMachineException{
-		machine.addItem(item1, machine.A_CODE);
+		machine.addItem(item1, VendingMachine.A_CODE);
 		machine.insertMoney(10.0);
-		machine.makePurchase(machine.A_CODE);
-		assertEquals(null, machine.getItem(machine.A_CODE));
+		machine.makePurchase(VendingMachine.A_CODE);
+		assertEquals(null, machine.getItem(VendingMachine.A_CODE));
 	}
 	
 	/**
@@ -173,9 +173,9 @@ public class VendingMachineTest {
 	 */
 	@Test
 	public void testMakePurchaseDecreasesBalance() throws VendingMachineException{
-		machine.addItem(item1, machine.A_CODE);
+		machine.addItem(item1, VendingMachine.A_CODE);
 		machine.insertMoney(10.00);
-		machine.makePurchase(machine.A_CODE);
+		machine.makePurchase(VendingMachine.A_CODE);
 		assertEquals(5.0, machine.balance, 0.001);
 	}
 	
@@ -185,9 +185,9 @@ public class VendingMachineTest {
 	 */
 	@Test
 	public void testMakePurchaseReturnsTrue() throws VendingMachineException{
-		machine.addItem(item1, machine.A_CODE);
+		machine.addItem(item1, VendingMachine.A_CODE);
 		machine.insertMoney(10.0);
-		assertTrue(machine.makePurchase(machine.A_CODE));
+		assertTrue(machine.makePurchase(VendingMachine.A_CODE));
 	}
 	
 	/**
@@ -196,9 +196,9 @@ public class VendingMachineTest {
 	 */
 	@Test
 	public void testMakePurchaseLowBalanceFalse() throws VendingMachineException{
-		machine.addItem(item1, machine.A_CODE);
+		machine.addItem(item1, VendingMachine.A_CODE);
 		machine.insertMoney(4.0);
-		assertFalse(machine.makePurchase(machine.A_CODE));
+		assertFalse(machine.makePurchase(VendingMachine.A_CODE));
 	}
 	
 	/**
@@ -208,7 +208,7 @@ public class VendingMachineTest {
 	@Test
 	public void testMakePurchaseOnEmptyFalse() throws VendingMachineException{
 		machine.insertMoney(10.0);
-		assertFalse(machine.makePurchase(machine.A_CODE));
+		assertFalse(machine.makePurchase(VendingMachine.A_CODE));
 	}
 	
 	/**
@@ -217,7 +217,7 @@ public class VendingMachineTest {
 	 */
 	@Test(expected = VendingMachineException.class)
 	public void testMakePurchasesInvalidCodeErrors()  throws VendingMachineException{
-		machine.addItem(item1, machine.A_CODE);
+		machine.addItem(item1, VendingMachine.A_CODE);
 		machine.insertMoney(10.);
 		machine.makePurchase("Invalid");
 	}
