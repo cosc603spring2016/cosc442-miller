@@ -1,0 +1,176 @@
+Test Generation Using the W-method. V2.0. August 1, 2013
+
+Enter filename: BinaryEvenOddFSM.txt
+FSM input from:  BinaryEvenOddFSM.txt
+States: 3
+Edges 6
+Input alphabet:
+0
+1
+
+Output alphabet:
+Even
+Odd
+
+From 	 Input/Output 	 To
+1	 0/Odd		 1
+1	 1/Odd		 2
+2	 0/Even		 3
+2	 1/Odd		 1
+3	 1/Even		 3
+3	 0/Even		 2
+
+Transition cover set (P). 7 entries.
+Empty 0 1 10 100 101 11 
+
+W Set. 2 entries.
+0 1 
+
+Number of Test Cases :14
+Test cases: [0, 00, 01, 1, 10, 100, 1000, 1001, 101, 1010, 1011, 11, 110, 111]
+
+FSM execution begins. Input: 0 Initial state: 1
+Current state: 1
+ Input: 0 Next state: 1 Output: Odd
+
+FSM execution completed. Final state: 1
+Output pattern:Odd
+
+FSM execution begins. Input: 0 0 Initial state: 1
+Current state: 1
+ Input: 0 Next state: 1 Output: Odd
+Current state: 1
+ Input: 0 Next state: 1 Output: Odd
+
+FSM execution completed. Final state: 1
+Output pattern:OddOdd
+
+FSM execution begins. Input: 0 1 Initial state: 1
+Current state: 1
+ Input: 0 Next state: 1 Output: Odd
+Current state: 1
+ Input: 1 Next state: 2 Output: Odd
+
+FSM execution completed. Final state: 2
+Output pattern:OddOdd
+
+FSM execution begins. Input: 1 Initial state: 1
+Current state: 1
+ Input: 1 Next state: 2 Output: Odd
+
+FSM execution completed. Final state: 2
+Output pattern:Odd
+
+FSM execution begins. Input: 1 0 Initial state: 1
+Current state: 1
+ Input: 1 Next state: 2 Output: Odd
+Current state: 2
+ Input: 0 Next state: 3 Output: Even
+
+FSM execution completed. Final state: 3
+Output pattern:OddEven
+
+FSM execution begins. Input: 1 0 0 Initial state: 1
+Current state: 1
+ Input: 1 Next state: 2 Output: Odd
+Current state: 2
+ Input: 0 Next state: 3 Output: Even
+Current state: 3
+ Input: 0 Next state: 2 Output: Even
+
+FSM execution completed. Final state: 2
+Output pattern:OddEvenEven
+
+FSM execution begins. Input: 1 0 0 0 Initial state: 1
+Current state: 1
+ Input: 1 Next state: 2 Output: Odd
+Current state: 2
+ Input: 0 Next state: 3 Output: Even
+Current state: 3
+ Input: 0 Next state: 2 Output: Even
+Current state: 2
+ Input: 0 Next state: 3 Output: Even
+
+FSM execution completed. Final state: 3
+Output pattern:OddEvenEvenEven
+
+FSM execution begins. Input: 1 0 0 1 Initial state: 1
+Current state: 1
+ Input: 1 Next state: 2 Output: Odd
+Current state: 2
+ Input: 0 Next state: 3 Output: Even
+Current state: 3
+ Input: 0 Next state: 2 Output: Even
+Current state: 2
+ Input: 1 Next state: 1 Output: Odd
+
+FSM execution completed. Final state: 1
+Output pattern:OddEvenEvenOdd
+
+FSM execution begins. Input: 1 0 1 Initial state: 1
+Current state: 1
+ Input: 1 Next state: 2 Output: Odd
+Current state: 2
+ Input: 0 Next state: 3 Output: Even
+Current state: 3
+ Input: 1 Next state: 3 Output: Even
+
+FSM execution completed. Final state: 3
+Output pattern:OddEvenEven
+
+FSM execution begins. Input: 1 0 1 0 Initial state: 1
+Current state: 1
+ Input: 1 Next state: 2 Output: Odd
+Current state: 2
+ Input: 0 Next state: 3 Output: Even
+Current state: 3
+ Input: 1 Next state: 3 Output: Even
+Current state: 3
+ Input: 0 Next state: 2 Output: Even
+
+FSM execution completed. Final state: 2
+Output pattern:OddEvenEvenEven
+
+FSM execution begins. Input: 1 0 1 1 Initial state: 1
+Current state: 1
+ Input: 1 Next state: 2 Output: Odd
+Current state: 2
+ Input: 0 Next state: 3 Output: Even
+Current state: 3
+ Input: 1 Next state: 3 Output: Even
+Current state: 3
+ Input: 1 Next state: 3 Output: Even
+
+FSM execution completed. Final state: 3
+Output pattern:OddEvenEvenEven
+
+FSM execution begins. Input: 1 1 Initial state: 1
+Current state: 1
+ Input: 1 Next state: 2 Output: Odd
+Current state: 2
+ Input: 1 Next state: 1 Output: Odd
+
+FSM execution completed. Final state: 1
+Output pattern:OddOdd
+
+FSM execution begins. Input: 1 1 0 Initial state: 1
+Current state: 1
+ Input: 1 Next state: 2 Output: Odd
+Current state: 2
+ Input: 1 Next state: 1 Output: Odd
+Current state: 1
+ Input: 0 Next state: 1 Output: Odd
+
+FSM execution completed. Final state: 1
+Output pattern:OddOddOdd
+
+FSM execution begins. Input: 1 1 1 Initial state: 1
+Current state: 1
+ Input: 1 Next state: 2 Output: Odd
+Current state: 2
+ Input: 1 Next state: 1 Output: Odd
+Current state: 1
+ Input: 1 Next state: 2 Output: Odd
+
+FSM execution completed. Final state: 2
+Output pattern:OddOddOdd
