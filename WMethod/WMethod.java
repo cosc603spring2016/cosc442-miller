@@ -381,19 +381,27 @@ public class WMethod{
      Vector <String> tests=generateTests(transitionCover, w); // Generate tests.
      Utilities.printAllTestCases(tests); // Print tests.
      
-     // TODO: 	Write the necessary code to iterate through all test cases and run them against
-     // 		the FSM using the Utilities.runFSM() method. 
-     //
      // Example use of the Utilities.runFSM() method
      // Utilities.runFSM(FSM, 1, "a a b a b", " ");
-	 
-	for(String test : tests){
+	System.out.println("import static org.junit.*;"); 
+    System.out.println("public class JamesBondTest{"); 
+	for(int j=0; j<tests.size(); j++){
+		String test = tests.get(j);
 		String temp = test.charAt(0) + "";
 		for(int i=1; i< test.length(); i++){
 			temp = temp + " " + test.charAt(i);
 		}
-	   	 Utilities.runFSM(FSM, 1, temp, " ");
+		System.out.println("@Test");
+		System.out.println("public void testCase" + j + "(){");
+	   	if(Utilities.runFSM(FSM, 1, temp, " ")){
+	   		System.out.println("assertTrue(JamesBond.bondRegex(\""+test+"\"));");
+	   	}else{
+	   		System.out.println("assertFalse(JamesBond.bondRegex(\""+test+"\"));");
+	   	}
+	   	System.out.println("}");
+	   	System.out.println();
 	}
+	System.out.println("}");
 	
 
      
