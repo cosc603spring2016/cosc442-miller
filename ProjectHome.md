@@ -1,0 +1,1 @@
+This is my code repository for the duration of the Spring 2015 semester for submitting COSC442 code.
